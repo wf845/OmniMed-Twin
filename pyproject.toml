@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omnimed-twin"
+version = "0.1.0"
+description = "OMOP CDM v5.4 to MEDS v0.3 ETL and benchmark tooling"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pyarrow>=15",
+  "duckdb>=1",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
